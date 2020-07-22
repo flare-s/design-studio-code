@@ -1,0 +1,11 @@
+.icon {
+    transition: all .3s;
+    &--feature {
+        font-size: 3rem;
+        color: $color-black;
+        transition: color .3s;
+
+    }
+
+
+}

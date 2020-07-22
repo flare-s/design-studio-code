@@ -1,0 +1,166 @@
+.hero {
+
+    color: $color-white;
+    min-height: 100vh;
+    position: relative;
+    background-color: $color-primary;
+    @supports (clip-path: polygon(0 0, 0 0, 0 0, 0 0)) {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 74% 100%, 0 85%, 0% 50%);
+    }
+    
+    &-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        &-1 {
+            background-image: linear-gradient(110deg, rgba($color-primary, .4),
+            rgba($color-primary-light, .4),
+            rgba($color-primary-dark, .4)), 
+            url("../img/hero-1x.jpg") ;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+
+
+            @include responsive(min-width, map-get($break-points,  "lg")) {
+                    background-image: linear-gradient(110deg, rgba($color-primary, .4),
+                    rgba($color-primary-light, .4),
+                    rgba($color-primary-dark, .4)), 
+                    url("../img/hero-2x.jpg");
+            }
+        }
+
+        &-2 {
+            background-image: linear-gradient(110deg, rgba($color-primary, .4),
+            rgba($color-primary-light, .4),
+            rgba($color-primary-dark, .4)), 
+            url("../img/hero-2-1x.jpg") ;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            @media only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: map-get($break-points,  "lg")),
+                    only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: map-get($break-points,  "lg")),
+                    only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: map-get($break-points,  "lg")),
+                    only screen and (        min-device-pixel-ratio: 2)      and (min-width: map-get($break-points,  "lg")),
+                    only screen and (                min-resolution: 192dpi) and (min-width: map-get($break-points,  "lg")),
+                    only screen and (                min-resolution: 2dppx)  and (min-width: map-get($break-points,  "lg")) {
+                        background-image: linear-gradient(110deg, rgba($color-primary, .4),
+                        rgba($color-primary-light, .4),
+                        rgba($color-primary-dark, .4)), 
+                        url("../img/hero-2-2x.jpg");
+                    }
+            
+            @include responsive(min-width, map-get($break-points,  "lg")) {
+                background-image: linear-gradient(110deg, rgba($color-primary, .4),
+                rgba($color-primary-light, .4),
+                rgba($color-primary-dark, .4)), 
+                url("../img/hero-2-2x.jpg");
+            }
+        }
+
+
+        &-3 {
+            background-image: linear-gradient(110deg, rgba($color-primary, .4),
+            rgba($color-primary-light, .4),
+            rgba($color-primary-dark, .4)), 
+            url("../img/hero-3-1x.jpg") ;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+
+            @include responsive(min-width, map-get($break-points,  "lg")) {
+                background-image: linear-gradient(110deg, rgba($color-primary, .4),
+                rgba($color-primary-light, .4),
+                rgba($color-primary-dark, .4)), 
+                url("../img/hero-3-2x.jpg");
+            }
+        }
+
+        &--selected {
+            display: flex;
+            align-items: center;
+            animation: show .5s ease-in-out;
+        }
+
+
+        &__text {
+            display: none;
+            
+
+            &--selected {
+                animation: fadeIn 1s ease-in-out;
+                display: block;
+            }
+        }
+    }
+
+    
+    
+
+ 
+  
+}
+
+.about {
+    position: relative;
+
+    p {
+        position: relative;
+        z-index: 1;
+        background-color: $color-white;
+    }
+
+
+    &-image {
+        width: 90%;
+        height: 60rem;
+        margin: 0 auto;
+
+        @include mq(lg) {
+            width: 40rem;
+            margin: 0 0 0 auto;
+        }
+
+        img {
+            height: 100%;
+            position: relative;
+            z-index: 1;
+
+            @include mq(med) {
+                position: static;
+            }
+        }
+
+        
+    }
+}
+
+.separator {
+    top: 0;
+    left: 49%;
+    position: absolute;
+    width: 7px;
+    background-color: $color-primary-light;
+    height: 100%;
+    border-radius: 5px;
+    // z-index: -1;
+
+    @include mq(med) {
+        left: 50%;
+    }
+}
+
+.achievements {
+    background-image: $linear-primary;
+}
+
+
+.contact {
+    background-color: $color-primary;
+}

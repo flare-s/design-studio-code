@@ -1,0 +1,63 @@
+.counter {
+    width: 100%;
+    @include flex($align: center, $dir: column, $wrap: wrap);
+    @include mq(med) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__box {
+        @include flex($dir: column, $align: center);
+        width: 90%;
+        text-align: center;
+        height: 20rem;
+        padding: 2rem 1rem;
+        position: relative;
+        margin-bottom: 2rem;
+       
+
+
+        
+
+        @include mq(med) {
+            flex: 0 1 45%;
+        }
+
+
+        
+        @include mq(lg) {
+            flex: 0 1 20%;
+            margin-bottom: 0;
+        }
+
+        
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+            border: 2px solid $color-secondary;
+            transform: skew(7deg);
+            transition: transform .5s;
+        }
+
+        &:hover:before {
+            transform: skew(0);
+        }
+        
+    }
+
+    &__number {
+        font-size: 5rem;
+    }
+
+    &__title {
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>about us</title>
+</head>
+<body>
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" >
+            <div class="container">
+                <div class="logo-container">
+                    <a href="#" class="logo">
+                        logo
+                    </a>
+                </div>
+                <ul class="nav" data-nav>
+                    <li class="nav__item">
+                        <a  href="./index.html" class="nav__link" data-link id="home">
+                            home
+                        </a>
+                    </li>
+                    <li class="nav__item" >
+                        <a    href="./about.html" class="nav__link nav__link--selected" data-link id="about">
+                            about
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a   href="./services.html" class="nav__link" data-link id="services">
+                        services
+                        </a>
+                    </li>
+                    <li class="nav__item " data-contact id="contact">
+                        <a  href="./contact.html" class="nav__link">
+                            contact us
+                        </a>
+                    </li>
+                    
+                </ul>
+                <button type="menu" class="nav__btn" data-nav-toggle>
+                    <div class="nav__icon"></div>
+                </button>
+            </div>
+            <!-- end container-->
+        </nav>
+    </header>
+    <main role="main">
+      <section class="about">
+          <div class="container">
+              <div class="row">
+                  <div class="col">
+                      <h2 class="heading-secondary">
+                          about <span class="special">us</span>
+                      </h2>
+                      <p class="p-fluid">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus perspiciatis adipisci minima quos, accusantium saepe. Natus rem cum quos, accusantium voluptatem id inventore autem soluta aspernatur ex doloribus commodi eaque tenetur fuga aut, quo veniam.</p>
+                      <p class="p-fluid">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nesciunt dolore voluptatem hic itaque magni nisi. Itaque suscipit maxime aperiam illo enim!</p>
+                  </div>
+              </div>
+              <!-- end row -->
+          </div>
+          <!-- end container -->
+      </section> 
+      <!-- end about section -->
+      <section class="intro">
+          <div class="container">
+
+          
+            <div class="row">
+                <div class="col-lg-6 col-md-6 mr-lg-auto">
+                    <h2 class="heading-secondary heading-secondary--light">get to <span class="special-light">know</span> us</h2>
+                    <p class="text-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab rem explicabo, fugit possimus blanditiis eaque perferendis ullam iure minus inventore aperiam laboriosam libero, neque nihil quod? Consequatur optio officiis nam necessitatibus sapiente.</p>
+                    <a href="" class="btn--light">read more</a>
+                </div>
+                <div class="col-lg-5 col-md-6 d-none d-md-block">
+                    <img src="./img/office.jpg" alt="people in office">
+                </div>
+            </div>
+            <!-- end row-->
+          </div>
+          <!-- end container -->
+      </section> 
+      <!-- end intro section-->
+
+      <section class="info">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-6 my-5">
+                      <h2 class="heading-secondary">company <span class="special">info</span></h2>
+                      <div class="tabs" >
+                          <div class="tabs__tablist" role="tablist">
+                              <button class="tabs__tab tabs__tab--selected" role="tab" data-tab="1">what we do</button>
+                              <button class="tabs__tab" role="tab" data-tab="2">our achievments</button>
+                              <button class="tabs__tab" role="tab" data-tab="3">new features</button>
+                          </div>
+
+                          <button class="tabs__tab  tabs__tab--selected" role="tab" data-tab="1">what we do</button>
+                          <div class="tabs__content tabs__content--show" role="tabpanel" data-content="1">
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                              <ul class="tabs__list">
+                                  <li>Lorem ipsum dolor sit amet.</li>
+                                  <li>Lorem ipsum dolor sit amet consectetur.</li>
+                                  <li>Lorem ipsum dolor sit.</li>
+                                  <li>Lorem ipsum dolor sit amet.</li>
+                              </ul>
+                          </div>
+
+                          <button class="tabs__tab " role="tab" data-tab="2">our achievments</button>
+                          <div class="tabs__content" role="tabpanel" data-content="2">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            <ul class="tabs__list">
+                                  <li>Lorem ipsum dolor sit amet.</li>
+                                  <li>Lorem ipsum dolor sit amet consectetur.</li>
+                                  <li>Lorem ipsum dolor sit.</li>
+                                  <li>Lorem ipsum dolor sit amet.</li>
+                            </ul>
+                        </div>
+
+                        <button class="tabs__tab " role="tab" data-tab="3">new features</button>
+                        <div class="tabs__content" role="tabpanel" data-content="3">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            <ul class="tabs__list">
+                                  <li>Lorem ipsum dolor sit amet.</li>
+                                  <li>Lorem ipsum dolor sit amet consectetur.</li>
+                                  <li>Lorem ipsum dolor sit.</li>
+                                  <li>Lorem ipsum dolor sit amet.</li>
+                            </ul>
+                        </div>
+
+
+
+                      </div>
+                  </div>
+                  <div class="col-md-6 my-5">
+                    <h2 class="heading-secondary">faq</h2>
+                    <div class="accordion" role="tablist">
+                        <button class="accordion__item" role="tab">
+                            <div class="accordion__heading">
+                                why choose us?
+                                <span class="accordion__icon accordion__icon--open">
+                                    &Rang;
+                                </span>
+                            </div>
+                            
+                            <div class="accordion__content accordion__content--open" role="tabpanel">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, qui numquam? Placeat velit molestias sunt nesciunt, reiciendis nostrum, voluptatum eligendi architecto ad tenetur non accusantium!</p>
+                            </div>
+                        </button>
+
+                        <button class="accordion__item" role="tab">
+                            <div class="accordion__heading">
+                                let us help you
+                                <span class="accordion__icon">
+                                    &Rang;
+                                </span>
+                            </div>
+                            
+                            <div class="accordion__content" role="tabpanel">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, qui numquam? Placeat velit molestias sunt nesciunt, reiciendis nostrum, voluptatum eligendi architecto ad tenetur non accusantium!</p>
+                            </div>
+                        </button>
+
+                        <button class="accordion__item" role="tab">
+                            <div class="accordion__heading">
+                                what we can do for you
+                                <span class="accordion__icon">
+                                    &Rang;
+                                </span>
+                            </div>
+                            
+                            <div class="accordion__content" role="tabpanel">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, qui numquam? Placeat velit molestias sunt nesciunt, reiciendis nostrum, voluptatum eligendi architecto ad tenetur non accusantium!</p>
+                            </div>
+                        </button>
+
+                        <button class="accordion__item" role="tab">
+                            <div class="accordion__heading">
+                                explore your options
+                                <span class="accordion__icon">
+                                    &Rang;
+                                </span>
+                            </div>
+                            
+                            <div class="accordion__content" role="tabpanel">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, qui numquam? Placeat velit molestias sunt nesciunt, reiciendis nostrum, voluptatum eligendi architecto ad tenetur non accusantium!</p>
+                            </div>
+                        </button>
+                    </div>
+                  </div>
+              </div>
+              <!-- end row -->
+          </div>
+          <!-- end container -->
+      </section>
+      <!-- end info section-->
+    </main>
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p class="footer__copy">all rights reserved &copy; 2020 developed by flare</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

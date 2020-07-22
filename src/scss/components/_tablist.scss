@@ -1,0 +1,72 @@
+.tabs {
+    &__tablist {
+        display: none;
+        @include mq(med) {
+            @include flex;
+        }
+
+        .tabs__tab {
+            display: block;
+            flex: 1;
+            &:first-of-type {
+                border-top-left-radius: 15px;
+                border-bottom-left-radius: 15px;
+            }
+    
+            &:last-of-type {
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
+        }
+    }
+
+    &__tab {
+        background-color: transparent;
+        color: $color-secondary;
+        border: 1px solid $color-secondary;
+        padding: 1.5rem;
+        transition: border .5s, background-color .5s, color .3s;
+        width: 100%;
+        border-radius: 5px;
+
+        @include mq(med) {
+            display: none;
+        }
+        
+
+
+
+        &:not([class*="--selected"]) {
+            &:hover {
+                background-color: $color-primary-light;
+                border-color: $color-primary-light;
+                color: $color-white;
+            }
+    
+        }
+        
+        &--selected {
+
+            background-color: $color-primary;
+            border-color: $color-primary;
+            color: $color-white;
+        }
+    }
+
+    &__content {
+        margin: 2rem 0;
+        display: none;
+
+        &--show {
+            display: block;
+            animation: show .8s;
+        }
+    }
+
+
+    &__list {
+        li {
+            margin-bottom: 1.5rem;
+        }
+    }
+}

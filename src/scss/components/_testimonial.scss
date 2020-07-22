@@ -1,0 +1,47 @@
+.testimonial {
+    &__quote {
+        width: 90%;
+        margin: 0 auto;
+        padding: 4rem 1rem;
+        background-color: $color-grey-light-1;
+        position: relative;
+        margin-bottom: $gutter;
+        border-radius: 5px;
+
+        @include mq(med) {
+            width: 60%;
+            margin: 0 auto $gutter;
+        }
+
+        &:before {
+            content: "\201C";
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 7rem;
+            line-height: 1;
+        }
+
+        &:after {
+            content: "\201D";
+            position: absolute;
+            bottom: -20%;
+            right: 1%;
+            font-size: 7rem;
+            line-height: 1;
+        }
+    }
+
+    &__name  {
+        display: block;
+        text-transform: capitalize;
+        width: 90%;
+        margin: 0 auto;
+
+        @include mq(med) {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+    }
+}

@@ -1,0 +1,40 @@
+.wrapper {
+    visibility: hidden;
+    opacity: 0;
+    backface-visibility: hidden;
+    transition: .5s all ease-in-out;
+}
+
+.container {
+    @include mq(xlg) {
+        max-width: $max-width;
+    }
+
+    
+
+}
+
+
+
+.row {
+    padding: 3rem 0;
+    &:not(:last-child) {
+        margin-bottom: 8rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

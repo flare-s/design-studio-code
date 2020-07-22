@@ -1,0 +1,131 @@
+.team-member {
+    margin: 8rem auto ;
+    height: 35rem;
+    position: relative;
+    
+
+    @include mq(xsm) {
+        width: 100%;
+    }
+    
+    @include mq(sm) {
+        width: 33rem;
+    }
+
+    @include mq(med) {
+        margin: 10rem $gutter;
+        width: 25rem;
+    }
+
+
+    
+    
+
+    &__overlay {
+        position: absolute;
+        left: 0;
+        bottom: 5%;
+        height: 8rem;
+        width: 100%;
+        text-align: right;
+        transition: none;
+        overflow: hidden;
+
+
+
+        
+    }
+
+
+    &__caption {
+        width: 90%;
+        padding: 1rem 2rem;
+        background-color: rgba($color-secondary, 0.7);
+        transform: translateX(-60px);
+        color: $color-white;
+        text-transform: capitalize;
+        transition: transform .5s ease-in-out;
+
+        @include mq(med) {
+            transform: translateX(-35px);
+            width: 100%;
+        }
+    }
+
+    &__name, &__position {
+        margin-bottom: 1rem;
+    }
+
+    
+
+    &__img {
+        height: 100%;
+    }
+
+    &__social {
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        width: 2.8rem;
+        height: 1rem;
+        min-height: 2.8rem;
+        backface-visibility: hidden;
+        background-color: $color-secondary;
+        text-align: center;
+        @include flex($just: center, $align: center);
+        transition-property: width , border-radius , min-height;
+        transition-duration: .5s;
+        transition-timing-function: ease-in-out;
+
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: -7.9rem;
+            left: 50%;
+            transform: translateX(-50%) scaleY(1);
+            height: 8rem;
+            width: 5px;
+            background-color: $color-secondary;
+            transform-origin: bottom;
+            transition: transform .5s ease-in-out;
+            backface-visibility: hidden;
+
+        } 
+    }
+
+    .social-links {
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+        overflow: hidden;
+        height: 100%;
+        transform: /*translateY(70px)*/ scale(0);
+        transition:  transform .5s ease-in-out;
+        backface-visibility: hidden;
+    }
+
+    &:hover &__social {
+        width: 80%;
+        min-height: 4rem;
+        margin: 0 auto;
+        border-radius: 50px;
+
+        &:before {
+            transform: translateX(-50%) scaleY(0);
+        }
+
+
+    }
+
+    &:hover .social-links {
+        transform: /*translateY(0)*/ scale(1);
+    }
+
+
+    &:hover &__caption {
+        transform: translateX(0);
+    }
+}
