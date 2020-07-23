@@ -77,14 +77,15 @@ p {
     color: $color-white;
 }
 
-::-webkit-scrollbar {
-    background-color: $color-black;
+body::-webkit-scrollbar {
+    background-color: $color-secondary;
+    box-shadow: inset 0 0 1rem rgba($color-black, .5);
 
 }
 
-::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
     background-color: $color-primary;
-    background-image: $linear-mix;
+    background-image: $linear-primary;
     border-radius: 1rem;
 }
 
