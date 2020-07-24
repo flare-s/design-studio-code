@@ -1,14 +1,7 @@
-const path = require("path");
-const glob = require('glob');
-const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const PurgecssPlugin = require('purgecss-webpack-plugin');
 
-const PATHS = {
-    src: path.join(__dirname, 'src')
-  }
+
 
 module.exports = {
     entry: {
@@ -17,11 +10,6 @@ module.exports = {
         services: './src/js/services.js', 
         contact: './src/js/contact.js', 
     },  
-    output: {
-        filename: 'js/[name].bundle.js',
-        path: path.join(__dirname, 'dist'),
-        publicPath: ""
-    },
     module: {
         rules: [
             {
@@ -34,7 +22,11 @@ module.exports = {
                             [
                                 '@babel/preset-env',
                                 {
-                                    "useBuiltIns": "entry",
+                                    useBuiltIns: "entry",
+                                    corejs: '3.6.5',
+                                    targets: {
+                                        "browsers": ["last 4 versions", "ie >= 11"]
+                                    }
                                 }
                             ]
                         ],
@@ -46,7 +38,7 @@ module.exports = {
                 test: /\.(png|svg|jpg|gif|mp4)$/,
                 loader:'file-loader',
                 options: {
-                    name: 'img/[name].[ext]',
+                    name: 'img/[name]-[hash].[ext]',
 
                 }
                 
@@ -56,9 +48,6 @@ module.exports = {
                 use: [
                     {
                         loader: "html-loader",
-                        options: { 
-                            minimize: true,
-                        }
                     }
                 ]
             },
@@ -76,6 +65,15 @@ module.exports = {
                         loader: "css-loader"
                     },
                     {
+                        loader: 'postcss-loader',
+                        options: {
+                          sourceMap: true,
+                          config: {
+                            path: 'postcss.config.js'
+                          }
+                        }
+                    },
+                    {
                         loader: "sass-loader"
                     },
                 ]
@@ -86,12 +84,6 @@ module.exports = {
         ]
     },
     plugins: [
-        // new webpack.ProvidePlugin({
-        //     intersectionObserver: 'intersection-observer',
-        //     objectFitVideos: 'object-fit-videos',
-        //     axios: "axios",
-        //     anime: "animejs"
-        // }),
         new HtmlWebPackPlugin({
             template: "./src/index.html",
             filename: "./index.html",
@@ -120,15 +112,8 @@ module.exports = {
             filename: "css/[name].css",
             chunkFilename: "[id].css",
         }),
-        new PurgecssPlugin({
-            paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true }),
-        }),
 
     ],
-    devServer: {
-        port: 3000,
-        disableHostCheck: true,
-    }
 };
 
 

@@ -9,6 +9,10 @@
     height: 100%;
     width: 100%;
 
+    @supports (-webkit-overflow-scrolling: touch) {
+        background-attachment: scroll;
+    }
+
 
     @include responsive(min-width, map-get($break-points,  "lg")) {
         background-image: linear-gradient(110deg, rgba($color-primary, .4),

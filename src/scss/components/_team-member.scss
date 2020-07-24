@@ -41,13 +41,13 @@
         width: 90%;
         padding: 1rem 2rem;
         background-color: rgba($color-secondary, 0.7);
-        transform: translateX(-60px);
+        transform: translate3d(-60px, 0, 0);
         color: $color-white;
         text-transform: capitalize;
         transition: transform .5s ease-in-out;
 
         @include mq(med) {
-            transform: translateX(-35px);
+            transform: translate3d(-35px, 0, 0);
             width: 100%;
         }
     }
@@ -66,12 +66,12 @@
         position: absolute;
         top: 5%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate3d(-50%, 0, 0);
+        transform-style: preserve-3d;
         border-radius: 50%;
         width: 2.8rem;
         height: 1rem;
         min-height: 2.8rem;
-        backface-visibility: hidden;
         background-color: $color-secondary;
         text-align: center;
         @include flex($just: center, $align: center);
@@ -85,13 +85,13 @@
             position: absolute;
             top: -7.9rem;
             left: 50%;
-            transform: translateX(-50%) scaleY(1);
+            transform: translate3d(-50%, 0, 0) scaleY(1);
             height: 8rem;
             width: 5px;
             background-color: $color-secondary;
             transform-origin: bottom;
             transition: transform .5s ease-in-out;
-            backface-visibility: hidden;
+            transform-style: preserve-3d;
 
         } 
     }
@@ -114,7 +114,7 @@
         border-radius: 50px;
 
         &:before {
-            transform: translateX(-50%) scaleY(0);
+            transform: translate3d(-50%, 0, 0) scaleY(0);
         }
 
 
@@ -126,6 +126,6 @@
 
 
     &:hover &__caption {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
 }

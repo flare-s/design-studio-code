@@ -15,14 +15,22 @@
         width: 100%;
         height: 100%;
         display: none;
+
+        &-1, &-2, &-3 {
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            @supports (-webkit-overflow-scrolling: touch) {
+                background-attachment: scroll;
+            }
+        }
+
         &-1 {
             background-image: linear-gradient(110deg, rgba($color-primary, .4),
             rgba($color-primary-light, .4),
             rgba($color-primary-dark, .4)), 
             url("../img/hero-1x.jpg") ;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
 
 
 
@@ -39,9 +47,6 @@
             rgba($color-primary-light, .4),
             rgba($color-primary-dark, .4)), 
             url("../img/hero-2-1x.jpg") ;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
 
             @media only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: map-get($break-points,  "lg")),
                     only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: map-get($break-points,  "lg")),
@@ -69,9 +74,6 @@
             rgba($color-primary-light, .4),
             rgba($color-primary-dark, .4)), 
             url("../img/hero-3-1x.jpg") ;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
 
 
             @include responsive(min-width, map-get($break-points,  "lg")) {
