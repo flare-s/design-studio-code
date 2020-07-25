@@ -5,10 +5,10 @@
     position: relative;
     background-color: $color-primary;
 
-    @supports (clip-path: polygon(0 0, 0 0, 0 0, 0 0)) {
-        clip-path: polygon(0 0, 100% 0, 100% 85%, 74% 100%, 0 85%, 0% 50%);
-        overflow: hidden;
-    }
+    // @supports (clip-path: polygon(0 0, 0 0, 0 0, 0 0)) {
+    //     clip-path: polygon(0 0, 100% 0, 100% 85%, 74% 100%, 0 85%, 0% 50%);
+    //     overflow: hidden;
+    // }
     
     &-slide {
         position: absolute;
