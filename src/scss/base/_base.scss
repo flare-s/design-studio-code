@@ -9,11 +9,12 @@
 html {
      font-size: 62.5%; // so it would be 10px[16px (browser default font size) /10 = 62.5, so we can use rem unit to make responsive contenet
      overflow-x: hidden;
-     height: 100%;
+     min-height: 100%;
+
 } 
 
 body{ 
-    background-color: $color-white;
+    // background-color: $color-tertiary;
     line-height: 1.5;
     font-size: 1.6rem;
     height: 100%;

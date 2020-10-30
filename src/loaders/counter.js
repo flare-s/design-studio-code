@@ -1,16 +1,16 @@
-import "intersection-observer";
 
 
 
-const counters = Array.from(document.querySelectorAll("[data-counter]"));
+export const counters = Array.from(document.querySelectorAll("[data-counter]"));
 
-const counterOptions = {
+export const counterOptions = {
     threshold: 0.21,
     rootMargin: "0px"
 }
 
-// setting an observer on counter elements
-const countersObserver = new IntersectionObserver((entries) => {
+
+
+export function counter(entries) {
     entries.forEach(entry => {
         if (entry.intersectionRatio > 0.2) {
 
@@ -33,9 +33,4 @@ const countersObserver = new IntersectionObserver((entries) => {
             entry.target.textContent = "0";
         }
     });
-
-}, counterOptions);
-
-// start observing the selected elements
-counters.forEach(counter => countersObserver.observe(counter));
-
+}

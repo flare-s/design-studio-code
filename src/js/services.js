@@ -6,4 +6,6 @@ import '@fortawesome/fontawesome-free/js/brands';
 // import "@babel/polyfill";
 import "core-js/stable";
 import "regenerator-runtime/runtime";
-import '../loaders/nav';
+import {mobNav} from '../loaders/nav';
+
+mobNav();

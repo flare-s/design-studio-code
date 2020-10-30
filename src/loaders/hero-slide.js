@@ -1,13 +1,16 @@
 const slides = Array.from(document.querySelectorAll("[data-hero]"));
 
-const slide = slides.length - 1;
+const lastSlide = slides.length - 1;
 let index = 0;
 
-//changing slides every 5s
-setInterval(() => {
-    index < slide ? index++ : index = 0;
-    changeSlide();
-}, 5000);
+export function heroSlide() {
+    //changing slides every 5s
+    setInterval(() => {
+        index < lastSlide ? index++ : index = 0;
+        changeSlide();
+    }, 5000);
+}
+
 
 // the functionality of changing slides
 const changeSlide = () => {

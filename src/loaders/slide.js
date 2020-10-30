@@ -1,5 +1,5 @@
 // function that determnes the functionality of the carousel
-const slide = () => {
+export const slide = () => {
     const slides = Array.from(document.querySelectorAll("[data-slide]"));
     const slider = document.querySelector("[data-slider]");
     const indicators = Array.from(document.querySelectorAll(".carousel__indicator"));

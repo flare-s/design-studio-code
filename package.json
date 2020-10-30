@@ -42,6 +42,7 @@
     "bootstrap": "^4.5.0",
     "css-loader": "^3.6.0",
     "es6-promise-promise": "^1.0.0",
+    "hover-effect": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
     "intersection-observer": "^0.10.0",
     "jquery": "^3.5.1",
