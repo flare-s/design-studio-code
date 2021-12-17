@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "e-commerce website",
   "main": "index.js",
+  "homepage": "https://flare-s.github.io/design-studio-code",
   "scripts": {
     "watch:sass": "sass  src/scss/style.scss src/css/style.css",
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
     "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
     "build": "webpack --config webpack.config.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "start": "webpack serve --config webpack.config.js --open"
   },
   "author": "flare",
@@ -39,6 +42,7 @@
     "@fortawesome/fontawesome-free": "^5.13.1",
     "animejs": "^3.2.0",
     "bootstrap": "^4.5.0",
+    "gh-pages": "^3.2.3",
     "hover-effect": "^1.1.0",
     "intersection-observer": "^0.10.0",
     "jquery": "^3.5.1",
