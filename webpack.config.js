@@ -1,7 +1,12 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+const path = require("path");
+const glob = require('glob');
 
-
+const PATHS = {
+    src: path.join(__dirname, 'src')
+}
 
 module.exports = {
     entry: {
@@ -10,6 +15,11 @@ module.exports = {
         services: './src/js/services.js', 
         contact: './src/js/contact.js', 
     },  
+    output: {
+        filename: 'js/[name]-[contentHash].bundle.js',
+        path: path.join(__dirname, 'dist'),
+        publicPath: ""
+    },
     module: {
         rules: [
             {
@@ -22,11 +32,8 @@ module.exports = {
                             [
                                 '@babel/preset-env',
                                 {
-                                    useBuiltIns: "entry",
-                                    corejs: '3.6.5',
-                                    targets: {
-                                        "browsers": ["last 4 versions", "ie >= 11"]
-                                    }
+                                    useBuiltIns: "usage",
+                                    corejs: '3',
                                 }
                             ]
                         ],
@@ -34,14 +41,21 @@ module.exports = {
                     }
                 }
             },
-            {
-                test: /\.(png|svg|jpg|gif|mp4)$/,
-                loader:'file-loader',
-                options: {
-                    name: 'img/[name]-[hash].[ext]',
+            // {
+            //     test: /\.(png|svg|jpg|gif|mp4)$/,
+            //     loader:'file-loader',
+            //     options: {
+            //         name: 'img/[name]-[hash].[ext]',
 
-                }
+            //     }
                 
+            // },
+            {
+                test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
+                type: 'asset',
+                generator: {
+                    filename: './img/[hash][ext][query]'
+                }
             },
             {
                 test: /\.html$/,
@@ -68,8 +82,8 @@ module.exports = {
                         loader: 'postcss-loader',
                         options: {
                           sourceMap: true,
-                          config: {
-                            path: 'postcss.config.js'
+                          postcssOptions: {
+                            config: 'postcss.config.js',
                           }
                         }
                     },
@@ -90,19 +104,22 @@ module.exports = {
             chunks: ['index'],  
         }),
         new HtmlWebPackPlugin({
-            template: "./src/about.html",
-            filename: "./about.html",
+            template: "./src/pages/about.html",
+            filename: "./pages/about.html",
             chunks: ['about'], 
+            publicPath: '../'
         }),
         new HtmlWebPackPlugin({
-            template: "./src/services.html",
-            filename: "./services.html",
+            template: "./src/pages/services.html",
+            filename: "./pages/services.html",
             chunks: ['services'], 
+            publicPath: '../'
         }),
         new HtmlWebPackPlugin({
-            template: "./src/contact.html",
-            filename: "./contact.html",
+            template: "./src/pages/contact.html",
+            filename: "./pages/contact.html",
             chunks: ['contact'],
+            publicPath: '../'
             
 
             
@@ -112,8 +129,15 @@ module.exports = {
             filename: "css/[name].css",
             chunkFilename: "[id].css",
         }),
+        new PurgecssPlugin({
+            paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true }),
+        })
 
     ],
+    devServer: {
+        static: path.join(__dirname, 'dist'),
+        port: 9000,
+    }
 };
 
 
